@@ -37,7 +37,7 @@
 (use-package modus-themes)
 (load-theme 'modus-operandi t)
 ;;(set-frame-font "Inconsolata-18")
-(set-frame-font "Firacode-18")
+(set-frame-font "Firacode-12")
 
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
@@ -56,7 +56,7 @@
   :config
   (global-hungry-delete-mode))
 
-(use-package aggressive-indent 
+(use-package aggressive-indent
   :config
   (global-aggressive-indent-mode 1)
   (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
@@ -74,7 +74,7 @@
   (which-key-mode))
 
 (use-package pcre2el
-  :config 
+  :config
   (pcre-mode))
 
 (setenv "BROWSER" "firefox")
@@ -361,6 +361,7 @@
 
 
 (use-package elfeed
+  :disabled t
   :bind (:map elfeed-search-mode-map
               ("q" . bjm/elfeed-save-db-and-bury)
               ("Q" . bjm/elfeed-save-db-and-bury)
@@ -458,10 +459,10 @@
 
 ;; [[file:config.org::*diredstuff][diredstuff:1]]
 (use-package diredfl
-:config 
+:config
 (diredfl-global-mode 1))
 
-(setq 
+(setq
 dired-listing-switches "-lXGh --group-directories-first"
 dired-dwim-target t)
 (add-hook 'dired-mode-hook 'dired-hide-details-mode)
@@ -792,8 +793,8 @@ dired-dwim-target t)
 ;; Web stuff:1 ends here
 
 ;; [[file:config.org::*refile this][refile this:1]]
-(setq user-full-name "Mike Zamansky"
-      user-mail-address "mz631@hunter.cuny.edu")
+(setq user-full-name "Heegoo Han"
+      user-mail-address "hghan9@gmail.comu")
 ;; (global-set-key [mouse-3] 'flyspell-correct-word-before-point)
 
 
@@ -819,4 +820,12 @@ dired-dwim-target t)
 
 
 (setq dired-guess-shell-alist-user '(("" "xdg-open")))
+
+;;; korean and my stuffs
+(setq default-input-method "korean-hangul")
+(global-set-key (kbd "S-SPC") 'toggle-input-method)
+(global-set-key (kbd "<Hangul>") 'toggle-input-method)
+(setq default-korean-keyboard 'korean-hangul2)
+(global-set-key (kbd "<f4>") 'save-buffers-kill-terminal)
+(global-display-line-numbers-mode)
 ;; refile this:1 ends here

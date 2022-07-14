@@ -30,7 +30,8 @@
             (setq gc-cons-threshold (expt 2 23))))
 
 
-(load-file "~/.emacs.d/config.el")
+;(load-file "~/.emacs.d/config.el")
+(load-file (expand-file-name "config.el" user-emacs-directory))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
